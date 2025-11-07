@@ -143,6 +143,13 @@ html {
         <h1>Rosmayanti &amp; Aldi Febrianto</h1>
         <p>Selasa, 18 November 2025</p>
         <button id="open-btn" class="btn">💌 Buka Undangan</button>
+        <section class="invitation-to" style="text-align:center; margin-top:30px;">
+  <h2 id="guest-name" style="font-size:1.5rem; color:#005f73;"></h2>
+  <p style="color:#333;">Kepada Yth.</p>
+  <p style="font-weight:bold;" id="guest-address"></p>
+</section>
+
+
       </div>
     </div>
   </div>
@@ -289,5 +296,24 @@ if (guest) {
   </script>
 
   <noscript>Harap aktifkan JavaScript untuk melihat komentar dan efek.</noscript>
+<script>
+  // Ambil parameter nama dari URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const guestName = urlParams.get('to');
+
+  // Elemen tempat menampilkan nama
+  const guestNameElement = document.getElementById('guest-name');
+  const guestAddressElement = document.getElementById('guest-address');
+
+  if (guestName) {
+    guestNameElement.textContent = decodeURIComponent(guestName);
+    guestAddressElement.textContent = 'Di Tempat';
+  } else {
+    guestNameElement.textContent = '';
+    guestAddressElement.textContent = '';
+  }
+</script>
+
+
 </body>
 </html>
