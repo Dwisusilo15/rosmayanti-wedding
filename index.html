@@ -6,314 +6,359 @@
   <title>Undangan Rosmayanti & Aldi</title>
   <meta name="description" content="Undangan pernikahan Rosmayanti & Aldi - editable template" />
   <style>
-    :root{--accent:#4a7ca8;--muted:#6b7280}
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;background:#fff;color:#111}
-    .page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+    :root {
+      --accent: #4a7ca8;
+      --muted: #6b7280;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+      background: #fff;
+      color: #111;
+      overflow-x: hidden;
+    }
+    .page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
 
     /* Intro screen */
-    .intro{position:fixed;top:0;left:0;width:100vw;height:100vh;overflow:hidden;background:url('assets/images/hero.jpg') center/cover no-repeat;z-index:45}
     .intro {
-    display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      overflow: hidden;
+      background: url('assets/images/hero.jpg') center/cover no-repeat;
+      z-index: 45;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-}
-    .intro::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.45),rgba(0,0,0,0.35));pointer-events:none;}
-    .intro-inner{position:relative;padding:80px 30px;text-align:center;color:#090dda}
-    .intro h1{font-family:'Georgia',serif;font-size:48px;margin:0 0 8px}
-    .intro p{margin:4px 0 18px;color:rgba(255,255,255,0.9)}
-    .btn{display:inline-block;padding:12px 22px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;cursor:pointer;border:none}
+    }
+    .intro::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+    }
+    .intro-inner {
+      position: relative;
+      z-index: 10;
+      color: #fff;
+      padding: 40px;
+    }
     .intro-inner .muted {
-  font-size: 26px;
-  font-family: "Playfair Display", serif;
-  color: #fcfbfa;
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
+      font-size: 28px;
+      font-weight: 700; /* Lebih tebal */
+      font-family: "Playfair Display", serif;
+      letter-spacing: 2px;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+    .intro h1 {
+      font-family: 'Georgia', serif;
+      font-size: 48px;
+      margin: 10px 0;
+    }
+    .intro p {
+      margin: 4px 0 18px;
+      color: rgba(255,255,255,0.9);
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+    }
 
     /* Main content */
-    .main{display:none;max-width:980px;width:100%;margin:0 auto;padding: 60px 16px;}
-    .card{background:#f4f3f5;border-radius:12px;padding:20px;margin:18px 0;box-shadow:0 6px 18px rgba(20,20,20,0.06)}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    h2{margin:6px 0}
-    .muted{color:var(--muted);}
-    .gallery{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-    .gallery img{width:calc(50% - 6px);border-radius:10px;object-fit:cover}
-    .map-btn{display:inline-block;padding:10px 14px;border-radius:8px;background:#2f8a5f;color:#fff;text-decoration:none}
-    footer{margin-top:18px;text-align:center;color:var(--muted)}
+    .main {
+      display: none;
+      max-width: 980px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 60px 16px;
+    }
+    .card {
+      background: #f4f3f5;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 18px 0;
+      box-shadow: 0 6px 18px rgba(20,20,20,0.06);
+      text-align: center;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    h2 { margin: 6px 0; }
+    .muted { color: var(--muted); }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+    .gallery img {
+      width: calc(50% - 6px);
+      border-radius: 10px;
+      object-fit: cover;
+    }
+    .map-btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: #2f8a5f;
+      color: #fff;
+      text-decoration: none;
+    }
 
-    /* comments */
-    #disqus_thread{max-width:860px;margin:0 auto}
+    /* Responsif */
+    @media (max-width: 720px) {
+      .grid { grid-template-columns: 1fr; }
+      .gallery img { width: 100%; }
+      .intro h1 { font-size: 34px; }
+      .intro-inner .muted { font-size: 22px; }
+    }
 
-    @media(max-width:720px){.grid{grid-template-columns:1fr}.gallery img{width:100%}.intro h1{font-size:34px;padding:0 10px}}
+    /* Hero image */
+    .hero-after {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero-after .hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 70px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      animation: fadeInHero 10s ease-in-out forwards;
+    }
+    @keyframes fadeInHero {
+      from { opacity: 0; transform: scale(1.05); }
+      to { opacity: 1; transform: scale(1); }
+    }
 
-    canvas#petals {
+    /* Music button */
+    #music-toggle {
+      position: fixed;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: none;
+      background: var(--accent);
+      color: #fff;
+      z-index: 50;
+      cursor: pointer;
+    }
+
+    /* Guest section animation */
+    #invited-section {
+      animation: fadeInGuest 3s ease-in-out;
+    }
+    @keyframes fadeInGuest {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    canvas#flowerCanvas {
   position: fixed;
-  left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* ini penting agar klik tidak terblokir */
-  z-index: 1; /* ubah dari 40 ke 1 agar di bawah tombol intro */
-}
-    #music-toggle{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);padding:10px 12px;border-radius:999px;border:none;background:var(--accent);color:#fff;z-index:50;cursor:pointer}
-
-  .hero-after {
-  text-align: center;
-  margin-top: 10px;
-}
-
-  .hero-after .hero-img {
-  width: 100%;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-  animation: fadeIn 3.5s ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-.hero-after {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  
-}
-
-.hero-after .hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* pastikan gambar utuh */
-  object-position: center; /* gambar di tengah */
-  display: block;
-  animation: fadeInHero 14s cubic-bezier(0.25, 1, 0.5, 1) 2s forwards;
-}
-
-/* Animasi lebih lembut dan pelan */
-@keyframes fadeInHero {
-  from { opacity: 0; transform: scale(1.05); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-/* Adaptif di layar HP (supaya tetap rapi dan tidak terlalu kecil) */
-@media (max-width: 600px) {
-  .hero-after .hero-img {
-    width: 100%;
-    height: auto;
-    max-height: 100vh;
-  }
-}
-
-#invited-section {
-  animation: fadeInGuest 2s ease-in-out;
-}
-@keyframes fadeInGuest {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  left: 0;
+  pointer-events: none; /* supaya tidak ganggu klik */
+  z-index: 5;
 }
 
 
   </style>
 </head>
 <body>
-  <canvas id="petals"></canvas>
 
-  <!-- Audio -->
+  <!-- Background music -->
   <audio id="bg-music" src="assets/audio/Janji Suci-Yovie&Nuno.mp3" loop preload="auto"></audio>
   <button id="music-toggle" aria-label="toggle music">Play Music</button>
 
   <!-- Intro -->
-  <div class="page">
-    <div class="intro" id="intro-screen">
-      <div class="intro-inner">
-        <p class="muted">Undangan Pernikahan</p>
-        <h1>Rosmayanti &amp; Aldi Febrianto</h1>
-        <p>Selasa, 18 November 2025</p>
-        <button id="open-btn" class="btn">💌 Buka Undangan</button>
-        <section class="invitation-to" style="text-align:center; margin-top:30px;">
-  <h2 id="guest-name" style="font-size:1.5rem; color:#005f73;"></h2>
-  <p style="color:#333;">Kepada Yth.</p>
-  <p style="font-weight:bold;" id="guest-address"></p>
-</section>
+  <div class="intro" id="intro-screen">
+    <div class="intro-inner">
+      <section class="invitation-to" style="margin-bottom:20px;">
+        <p style="color:#fff;">Kepada Yth.</p>
+        <h2 id="guest-name-intro" style="font-size:1.6rem; color:#ffeaa7;"></h2>
+      </section>
 
-
-      </div>
+      <p class="muted">Undangan Pernikahan</p>
+      <h1>Rosmayanti &amp; Aldi Febrianto</h1>
+      <p>Selasa, 18 November 2025</p>
+      <button id="open-btn" class="btn">💌 Buka Undangan</button>
     </div>
   </div>
 
-  <!-- Main page -->
-  <section class="hero-after">
-    <img src="assets/images/Rosma5.jpg" alt="Rosmayanti dan Aldi" class="hero-img">
-  </section>
-  <main class="page main" id="main-screen" aria-hidden="true" style="display:none;">
-    <div style="width:100%">
-      <section class="card" id="invited-section" style="text-align:center; display:none;">
-  <p class="muted">Kepada Yth.</p>
-  <h2 id="guest-name" style="margin: 0; font-size: 24px; color: var(--accent);"></h2>
-  <p class="muted">Di Tempat</p>
-</section>
+  <!-- Main Page -->
+  <main class="page main" id="main-screen" aria-hidden="true">
+    <canvas id="flowerCanvas"></canvas>
+    <section class="hero-after">
+      <img src="assets/images/Rosma5.jpg" alt="Rosmayanti dan Aldi" class="hero-img">
+    </section>
 
-      <section class="card" style="text-align:center">
-        <h2>السلام عليكم ورحمة الله وبركاته</h2>
-        <p class="muted">Dengan segala kerendahan hati, kami mengundang Anda untuk hadir dan mendoakan Pernikahan Kami.</p>
-        <div style="margin-top:12px;text-align:center">
-          <img src="assets/images/Rosma3.jpeg" alt="Foto pasangan" style="width:300px;border-radius:10px;object-fit:cover;">
-        </div>
-        <div class="grid" style="margin-top:12px">
-          <div><h3>ALDI FEBRIANTO</h3><p class="muted">Mempelai Laki-laki</p></div>
-          <div><h3>ROSMAYANTI</h3><p class="muted">Mempelai Perempuan</p></div>
-        </div>
-      </section>
+    <section class="card" id="invited-section" style="display:none;">
+      <p class="muted">Kepada Yth.</p>
+      <h2 id="guest-name-main" style="margin:0; font-size:24px; color:var(--accent);"></h2>
+      <p class="muted">Di Tempat</p>
+    </section>
 
-      <section class="card">
-        <h2>Jadwal Acara</h2>
-        <div class="grid" style="margin-top:10px">
-          <div><h4>Akad Nikah</h4><p>Selasa, 18 November 2025<br><strong>09.00 WIB</strong></p></div>
-          <div><h4>Resepsi</h4><p>Selasa, 18 November 2025<br><strong>11.00 WIB - Selesai</strong></p></div>
-        </div>
-      </section>
+    <section class="card">
+      <h2>السلام عليكم ورحمة الله وبركاته</h2>
+      <p class="muted">Dengan segala kerendahan hati, kami mengundang Anda untuk hadir dan mendoakan Pernikahan Kami.</p>
+      <div style="margin-top:12px;text-align:center">
+        <img src="assets/images/Rosma3.jpeg" alt="Foto pasangan" style="width:300px;border-radius:10px;object-fit:cover;">
+      </div>
+      <div class="grid" style="margin-top:12px">
+        <div><h3>ALDI FEBRIANTO</h3><p class="muted">Mempelai Laki-laki</p></div>
+        <div><h3>ROSMAYANTI</h3><p class="muted">Mempelai Perempuan</p></div>
+      </div>
+    </section>
 
-      <section class="card">
-        <h2>Lokasi</h2>
-        <p class="muted">Rancabanteng RT 003 RW 002, Klapagading Kulon<br>(Sebelah SMP Muhammadiyah 17 Wangon)</p>
-        <p style="margin-top:12px;text-align:center">
-          <a class="map-btn" href="https://maps.app.goo.gl/nNKdPfxZjYMEg3k77" target="_blank">Buka di Google Maps</a>
-        </p>
-      </section>
+    <section class="card">
+      <h2>Jadwal Acara</h2>
+      <div class="grid" style="margin-top:10px">
+        <div><h4>Akad Nikah</h4><p>Selasa, 18 November 2025<br><strong>09.00 WIB</strong></p></div>
+        <div><h4>Resepsi</h4><p>Selasa, 18 November 2025<br><strong>11.00 WIB - Selesai</strong></p></div>
+      </div>
+    </section>
 
-      <section class="card">
-        <h2>Galeri</h2>
-        <div class="gallery">
-          <img src="assets/images/Rosma1.jpeg" alt="Foto pasangan 1">
-          <img src="assets/images/Rosma4.jpeg" alt="Foto pasangan 2">
-        </div>
-      </section>
+    <section class="card">
+      <h2>Lokasi</h2>
+      <p class="muted">Rancabanteng RT 003 RW 002, Klapagading Kulon<br>(Sebelah SMP Muhammadiyah 17 Wangon)</p>
+      <p style="margin-top:12px;">
+        <a class="map-btn" href="https://maps.app.goo.gl/nNKdPfxZjYMEg3k77" target="_blank">Buka di Google Maps</a>
+      </p>
+    </section>
 
-      <section class="card">
-        <h2>Kirim Ucapan &amp; Doa</h2>
-        <p class="muted">Tulis pesan dan doa Anda di kolom komentar di bawah ini.</p>
-        <div id="disqus_thread"></div>
-      </section>
+    <section class="card">
+      <h2>Galeri</h2>
+      <div class="gallery">
+        <img src="assets/images/Rosma1.jpeg" alt="Foto pasangan 1">
+        <img src="assets/images/Rosma4.jpeg" alt="Foto pasangan 2">
+      </div>
+    </section>
 
-      <footer class="card" style="text-align:center">
-        <p class="muted">Terima kasih atas doa dan kehadiran Anda.</p>
-        <p class="muted">Rosmayanti &amp; Aldi Febrianto</p>
-      </footer>
-    </div>
+    <section class="card">
+      <h2>Kirim Ucapan & Doa</h2>
+      <p class="muted">Tulis pesan dan doa Anda di kolom komentar di bawah ini.</p>
+      <div id="disqus_thread"></div>
+    </section>
+
+    <footer class="card">
+      <p class="muted">Terima kasih atas doa dan kehadiran Anda.</p>
+      <p class="muted">Rosmayanti & Aldi Febrianto</p>
+    </footer>
   </main>
 
   <script>
-    const DISQUS_SHORTNAME = 'rosmayanti-wedding';
     const intro = document.getElementById('intro-screen');
     const main = document.getElementById('main-screen');
     const openBtn = document.getElementById('open-btn');
     const music = document.getElementById('bg-music');
     const musicToggle = document.getElementById('music-toggle');
 
-    openBtn.addEventListener('click', function(){
+    // Tombol buka undangan
+    openBtn.addEventListener('click', function() {
       intro.style.display = 'none';
       main.style.display = 'block';
       main.setAttribute('aria-hidden','false');
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
-      music.play().then(()=>{musicToggle.textContent='Pause Music';}).catch(()=>{musicToggle.textContent='Play Music';});
-
-      setTimeout(()=>{
-    window.scrollTo({
-      top: window.innerHeight,
-      behavior: 'smooth'
-    });
-  }, 2000);
-
+      music.play().then(()=>{musicToggle.textContent='Pause Music';})
+      .catch(()=>{musicToggle.textContent='Play Music';});
     });
 
-    
-
+    // Tombol musik
     musicToggle.addEventListener('click', function(){
-      if(music.paused){ music.play(); musicToggle.textContent='Pause Music'; }
-      else{ music.pause(); musicToggle.textContent='Play Music'; }
+      if (music.paused) { music.play(); musicToggle.textContent='Pause Music'; }
+      else { music.pause(); musicToggle.textContent='Play Music'; }
     });
 
-    // Petals animation
-    (function(){
-      const canvas=document.getElementById('petals'),ctx=canvas.getContext('2d');
-      let w=canvas.width=window.innerWidth,h=canvas.height=window.innerHeight;
-      window.addEventListener('resize',()=>{w=canvas.width=window.innerWidth;h=canvas.height=window.innerHeight;});
-      const petals=[];
-      for(let i=0;i<40;i++)petals.push({x:Math.random()*w,y:Math.random()*h,r:2+Math.random()*6,s:0.5+Math.random()*1.5,rot:Math.random()*360});
-      function draw(){
-        ctx.clearRect(0,0,w,h);
-        petals.forEach(p=>{
-          ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot*Math.PI/180);
-          ctx.beginPath();ctx.fillStyle='rgba(255,182,193,0.9)';
-          ctx.ellipse(0,0,p.r,p.r*1.6,0,0,Math.PI*2);ctx.fill();ctx.restore();
-          p.y+=p.s;p.x+=Math.sin(Date.now()/1000+p.r)*0.3;p.rot+=0.5;
-          if(p.y>h+20){p.y=-40;p.x=Math.random()*w;}
-        });
-        requestAnimationFrame(draw);
-      }
-      draw();
-    })();
-
-    // Disqus embed
+    // Disqus
     (function(){
       var d=document,s=d.createElement('script');
-      s.src='https://'+DISQUS_SHORTNAME+'.disqus.com/embed.js';
+      s.src='https://rosmayanti-wedding.disqus.com/embed.js';
       s.setAttribute('data-timestamp',+new Date());
       (d.head||d.body).appendChild(s);
     })();
 
-    // Baca parameter dari URL
-const urlParams = new URLSearchParams(window.location.search);
-const guest = urlParams.get('to');
-
-// Kalau ada nama tamu di URL, tampilkan di halaman
-if (guest) {
-  const invitedSection = document.getElementById('invited-section');
-  const guestName = document.getElementById('guest-name');
-  guestName.textContent = decodeURIComponent(guest);
-  invitedSection.style.display = 'block';
-
-  // Jika ingin langsung buka undangan tanpa klik tombol
-  setTimeout(() => {
-    document.getElementById('open-btn').click();
-  }, 1000); // jeda 1 detik biar tetap ada efek lembut
-}
-
+    // Nama tamu dari URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const guest = urlParams.get('to');
+    if (guest) {
+      const decoded = decodeURIComponent(guest);
+      document.getElementById('guest-name-intro').textContent = decoded;
+      document.getElementById('guest-name-main').textContent = decoded;
+      document.getElementById('invited-section').style.display = 'block';
+    }
   </script>
 
-  <noscript>Harap aktifkan JavaScript untuk melihat komentar dan efek.</noscript>
 <script>
-  // Ambil parameter nama dari URL
-  const urlParams = new URLSearchParams(window.location.search);
-  const guestName = urlParams.get('to');
+  const canvas = document.getElementById("flowerCanvas");
+  const ctx = canvas.getContext("2d");
+  let width = window.innerWidth;
+  let height = window.innerHeight;
+  canvas.width = width;
+  canvas.height = height;
 
-  // Elemen tempat menampilkan nama
-  const guestNameElement = document.getElementById('guest-name');
-  const guestAddressElement = document.getElementById('guest-address');
+  const flowers = Array.from({ length: 25 }, () => ({
+    x: Math.random() * width,
+    y: Math.random() * height,
+    size: 10 + Math.random() * 20,
+    speed: 0.5 + Math.random() * 1.5,
+    drift: Math.random() * 2 - 1
+  }));
 
-  if (guestName) {
-    guestNameElement.textContent = decodeURIComponent(guestName);
-    guestAddressElement.textContent = 'Di Tempat';
-  } else {
-    guestNameElement.textContent = '';
-    guestAddressElement.textContent = '';
+  function drawFlower(f) {
+    ctx.beginPath();
+    ctx.arc(f.x, f.y, f.size / 2, 0, Math.PI * 2);
+    ctx.fillStyle = "rgba(255,182,193,0.8)";
+    ctx.fill();
   }
+
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+    for (let f of flowers) {
+      drawFlower(f);
+      f.y += f.speed;
+      f.x += f.drift;
+      if (f.y > height) {
+        f.y = -10;
+        f.x = Math.random() * width;
+      }
+    }
+    requestAnimationFrame(animate);
+  }
+
+  animate();
 </script>
+
 
 
 </body>
 </html>
+
